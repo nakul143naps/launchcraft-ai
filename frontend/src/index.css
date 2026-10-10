@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  html, body, #root {
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    background-color: var(--studio-body-bg, #020617);
+    color: var(--studio-body-text, #f8fafc);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+}
+
+/* Studio UI Theme Variables */
+:root, [data-studio-theme="dark"] {
+  --studio-body-bg: #020617;
+  --studio-body-text: #f8fafc;
+  --studio-track: rgba(15, 23, 42, 0.6);
+  --studio-thumb: rgba(100, 116, 139, 0.5);
+  --studio-thumb-hover: rgba(148, 163, 184, 0.8);
+}
+
+[data-studio-theme="midnight"] {
+  --studio-body-bg: #000000;
+  --studio-body-text: #fafafa;
+  --studio-track: rgba(9, 9, 11, 0.8);
+  --studio-thumb: rgba(82, 82, 91, 0.6);
+  --studio-thumb-hover: rgba(113, 113, 122, 0.9);
+}
+
+[data-studio-theme="light"] {
+  --studio-body-bg: #f8fafc;
+  --studio-body-text: #0f172a;
+  --studio-track: rgba(226, 232, 240, 0.8);
+  --studio-thumb: rgba(148, 163, 184, 0.6);
+  --studio-thumb-hover: rgba(100, 116, 139, 0.9);
+}
+
+/* Custom scrollbars for slick editor look */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--studio-track);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--studio-thumb);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--studio-thumb-hover);
+}
+
+/* Scoped Studio Theme Styling for Properties Panel & Editor Controls */
+[data-studio-theme="light"] .properties-panel-container input,
+[data-studio-theme="light"] .properties-panel-container textarea,
+[data-studio-theme="light"] .properties-panel-container select {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+[data-studio-theme="light"] .properties-panel-container input::placeholder,
+[data-studio-theme="light"] .properties-panel-container textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+[data-studio-theme="light"] .properties-panel-container label {
+  color: #475569 !important;
+}
+
+[data-studio-theme="light"] .properties-panel-container div[class*="bg-slate-950"],
+[data-studio-theme="light"] .properties-panel-container div[class*="bg-slate-900"] {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+[data-studio-theme="midnight"] .properties-panel-container input,
+[data-studio-theme="midnight"] .properties-panel-container textarea,
+[data-studio-theme="midnight"] .properties-panel-container select {
+  background-color: #000000 !important;
+  color: #f4f4f5 !important;
+  border-color: #27272a !important;
+}
+
+[data-studio-theme="midnight"] .properties-panel-container input::placeholder,
+[data-studio-theme="midnight"] .properties-panel-container textarea::placeholder {
+  color: #71717a !important;
+}

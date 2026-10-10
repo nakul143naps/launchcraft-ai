@@ -1,0 +1,71 @@
+import React from 'react';
+import {
+  Activity,
+  ArrowRight,
+  Award,
+  BarChart3,
+  Calendar,
+  Check,
+  CheckCircle2,
+  Clock,
+  Code2,
+  Cpu,
+  Dumbbell,
+  Flame,
+  Globe,
+  Heart,
+  Layers,
+  Layout,
+  Lock,
+  Mail,
+  MapPin,
+  MessageSquare,
+  Phone,
+  Rocket,
+  Shield,
+  ShieldCheck,
+  Sparkles,
+  Star,
+  Target,
+  TrendingUp,
+  User,
+  Users,
+  Zap,
+} from 'lucide-react';
+
+const ICON_MAP = {
+  dumbbell: Dumbbell,
+  activity: Activity,
+  sparkles: Sparkles,
+  zap: Zap,
+  shield: Shield,
+  shieldcheck: ShieldCheck,
+  target: Target,
+  rocket: Rocket,
+  barchart: BarChart3,
+  chart: BarChart3,
+  calendar: Calendar,
+  clock: Clock,
+  users: Users,
+  heart: Heart,
+  award: Award,
+  trendingup: TrendingUp,
+  lock: Lock,
+  mail: Mail,
+  phone: Phone,
+  mappin: MapPin,
+  code: Code2,
+  cpu: Cpu,
+  layers: Layers,
+  layout: Layout,
+  messagesquare: MessageSquare,
+  star: Star,
+  check: Check,
+};
+
+export function IconRenderer({ name, className = 'w-6 h-6' }) {
+  if (!name) return <Sparkles className={className} />;
+  const normalized = name.toLowerCase().replace(/[^a-z0-9]/g, '');
+  const Component = ICON_MAP[normalized] || Sparkles;
+  return <Component className={className} />;
+}
