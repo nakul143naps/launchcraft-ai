@@ -11,15 +11,14 @@ services:
       - key: PYTHON_VERSION
         value: 3.11.9
       - key: GEMINI_API_KEY
-        sync: false # Set your Gemini API key in the Render Dashboard
+        sync: false
 
   # 2. Frontend React 19 + Vite Static Site
-  - type: static_site
+  - type: static
     name: launchcraft-frontend
     rootDir: frontend
     buildCommand: npm install && npm run build
-    publishDir: dist
-    plan: free
+    staticPublishPath: dist
     routes:
       - type: rewrite
         source: /*
